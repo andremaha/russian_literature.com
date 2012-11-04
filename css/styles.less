@@ -1,0 +1,293 @@
+/*
+	GENERAL COLORS
+*/
+@gray: #585858;
+@black: #010101;
+@blue: #008aff;
+a {
+	color: @black;
+}
+
+/*
+	GENERAL TYPOGRAPHY
+*/
+//TODO: Did not work
+@font-face {
+    font-family: 'pf_agora_serif_pro_mediumRg';
+    src: url('ufonts.com_pfagoraserifpro-medium-webfont.eot');
+    src: url('ufonts.com_pfagoraserifpro-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ufonts.com_pfagoraserifpro-medium-webfont.woff') format('woff'),
+         url('ufonts.com_pfagoraserifpro-medium-webfont.ttf') format('truetype'),
+         url('ufonts.com_pfagoraserifpro-medium-webfont.svg#pf_agora_serif_pro_mediumRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// Font Hierarchy (Mark Boulton Book p. 96)
+@basefontsize: 18px/1.5em;
+@h1fontsize: 218%;
+@h2fontsize: 164%;
+@h3fontsize: 145%;
+@h4fontsize: 118%;
+
+body {
+	font-size: @basefontsize;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+h1 {
+	font-size: @h1fontsize;
+}
+h2 {
+	font-size: @h2fontsize;
+}
+h3 {
+	font-size: @h3fontsize;
+}
+h4 {
+	font-size: @h4fontsize;
+}
+
+/*
+	GENERAL LAYOUT ELEMENTS
+*/
+.secionheading() {
+	padding-top: 5px;
+	font-size: @h3fontsize;
+	letter-spacing: 0.1em;
+	margin: 20px 0 0 0;
+	border-top: 3px solid black;
+	text-transform: uppercase;
+	display: inline-block;
+	font-weight: bold;
+}
+
+/*
+	GENERAL LAYOUT
+*/
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+/*
+	MAIN SECTION
+*/
+.main {
+	width: 550px;
+	float: left;
+}
+
+/*
+	ASIDE
+*/
+aside {
+	width: 360px;
+	padding-left: 10px;
+	margin-left: 40px;
+	float: left;
+}
+
+/*
+	HEADER
+*/
+header.main_header {
+
+	border-top: 3px solid black;
+	padding: 40px 0;
+	height: 50px;
+	
+	.logo {
+		width: 790px;
+		float: left;
+		
+		h1, h2 {
+			margin: 0;
+			
+		}
+		h1 {
+			padding: 0 10px;
+			font-weight: normal;
+			letter-spacing: 0.1em;
+			margin-left: 350px;
+			font-family: 'Georgia';
+			
+		}
+		h2 {
+			margin-left: 357px;
+			text-transform: uppercase;
+			font-size: @h4fontsize;
+		}
+	}
+	.language_switcher {
+		width: 170px;
+		float: left;
+		margin-top: 10px;
+	}
+	
+}
+
+/*
+	MATERIALS
+*/
+.materials {
+	header {
+		h1 {
+			.secionheading;
+		}
+		nav {
+			height: 40px;
+			margin-top: 20px;
+			ul {
+				li {
+					float: left;
+					margin-left: 20px;
+					a {
+						text-decoration: none;
+						text-transform: uppercase;
+						color: @gray;
+						background: white;
+						padding: 0 5px;
+						&.active {
+							color: @black;
+							font-weight: bold;
+						}
+					}
+					&:fist {
+						margin-left: 0;
+					}
+				}
+				overflow: hidden;
+				margin: 20px 0 0 0;
+				padding-left: 10px;
+				height: 60px;
+				width: 568px;
+				background: url(../img/shelf_top.png) no-repeat;
+				background-position-y: -60%;
+				position: absolute;
+				left: -10px;
+				
+			}
+			position: relative;
+		}
+		form {
+			width: 40px;
+			position: absolute;
+			input {
+				width: inherit;
+				background: url(../img/search.png) white no-repeat;
+				position: absolute;
+				top: -22px;
+				left: 490px;
+			}
+			background: white;
+		}
+		position: relative;
+	}
+	.materials_list {
+		position: relative;
+		width: 568px; 
+
+		.materials_shelf {
+			list-style: none;
+			padding: 20px 0 100px 12px;
+			background: url(../img/layout-elements/shelf-middle.png) white no-repeat bottom;
+			
+			li {
+				width: 162px;
+				float: left;
+				margin-left: 20px;
+				z-index: 10;
+				&:first {
+					margin-left: 10px;
+				}
+				img {
+					background: url(../img/layout-elements/book-shadow.png) white no-repeat bottom;
+					padding-bottom: 4px;
+				}
+				h2 {
+					color: @gray;
+					font-size: @basefontsize;
+					text-transform: uppercase;
+					strong {
+						display: block;
+					}
+				}
+			}
+			overflow: hidden;
+			&.last {
+				padding-top: 0;
+				margin-top: -23px;
+				background: url(../img/layout-elements/shelf-bottom.png) white no-repeat bottom;
+			}
+		}	
+	}		
+}
+
+/*
+	SIDEBAR
+*/
+aside {
+	header {
+		h1 {
+			.secionheading;
+		}
+	}
+	.authors_list, .cities_list {
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			li {
+				text-transform: uppercase;
+				margin: 40px 0;
+				img {
+					height: 80px;
+					width: 80px;
+					border-radius: 100px;
+					float: left;
+					margin-right: 20px;
+				}
+				h2 {
+					font-size: @h4fontsize;
+					font-weight: bold;
+					font-family: 'Georgia';
+				}
+				a {
+					color: @blue;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+/*
+	PREE-FOOTER
+*/
+.pre_footer {
+	h1 {
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: .2em;
+	}
+	article {
+		p {
+			font-size: @h3fontsize;
+			font-family: 'PT Serif', serif;
+		}
+	}
+}
+
+/*
+	FOOTER
+*/
+footer {
+	background: url(../img/layout-elements/footer-border.png) no-repeat top;
+	padding: 50px 0 50px 0;
+	font-family: 'PT Serif', serif;
+	font-size: @h4fontsize;
+}
